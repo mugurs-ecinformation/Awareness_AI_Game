@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Security Defense – Professional Terminal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="cyber-theme">
+    <header class="top-bar">
+        <div class="status-box">SYSTEM: <span id="sys-status" class="blink">MONITORING</span></div>
+        <div class="top-nav">
+            <label class="switch-container">
+                <input type="checkbox" id="corporate-mode">
+                <span class="slider"></span>
+                <span class="mode-text">NIS2 / BIO2 PROTOCOL</span>
+            </label>
+            <button id="toggle-sound" class="btn-ctrl">🔊 GELUID: AAN</button>
+        </div>
+    </header>
+
+    <div class="main-layout">
+        <aside class="side-panel left">
+            <h3>COMMUNICATIELOGBOEK</h3>
+            <div id="log-content" class="log-stream"></div>
+        </aside>
+
+        <section class="center-stage">
+            <div id="intro-screen" class="screen">
+                <h1 class="glitch">AI DEFENSE TERMINAL</h1>
+                
+                <div class="vid-container" style="margin: 20px 0; width: 100%; max-width: 500px; border: 1px solid var(--neon); background: #000; overflow: hidden;">
+                    <video id="introVideo" width="100%" muted playsinline loop preload="auto">
+                        <source src="assets/intro-video.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <p>Initialiseer security training v3.0</p>
+                <div class="name-input-area">
+                    <input type="text" id="agent-name" placeholder="ENTER AGENT NAME..." maxlength="15">
+                </div>
+                <button id="btnStart" class="btn-main">INITIALISEER MISSIE</button>
+            </div>
+
+            <div id="game-screen" class="screen hidden">
+                <div class="task-bar">MISSIE: <span id="task-name">DATA INSPECTION</span></div>
+                <div id="inspection-box" class="terminal-window"></div>
+                <div id="choice-grid" class="choices"></div>
+            </div>
+
+            <div id="result-screen" class="screen hidden">
+                <h2 class="result-title">EINDANALYSE VOLTOOID</h2>
+                <div class="score-grid">
+                    <div class="score-card">RISICO SCORE: <span id="final-risk">0</span></div>
+                    <div class="score-card">DATA MASKED: <span id="final-mask">0</span></div>
+                </div>
+                <div class="high-score-section">
+                    <h3>🏆 AGENT LEADERBOARD (GLOBAL)</h3>
+                    <div id="leaderboard-list" class="leaderboard"></div>
+                </div>
+                <button onclick="location.reload()" class="btn-main">HERSTART TERMINAL</button>
+            </div>
+        </section>
+
+        <aside class="side-panel right">
+            <div class="stat-item">
+                <label>RISICO NIVEAU</label>
+                <div id="risk-val" class="v-val">0</div>
+            </div>
+            <div class="stat-item">
+                <label>COMPLIANCE</label>
+                <div id="badge-val" class="v-val secure">CERTIFIED</div>
+            </div>
+            <div class="visual-meter">
+                <div id="meter-fill" class="fill"></div>
+            </div>
+        </aside>
+    </div>
+
+    <div id="fact-modal" class="modal hidden">
+        <div class="modal-content">
+            <div id="modal-header" class="m-head">💡 ANALYSIS</div>
+            <p id="fact-body"></p>
+            <button id="btnNext" class="btn-main">VOLGENDE STAP</button>
+        </div>
+    </div>
+
+    <audio id="bgm" src="assets/bg-music.mp3" loop preload="auto"></audio>
+    <audio id="sfxAlert" src="assets/alert.wav" preload="auto"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
